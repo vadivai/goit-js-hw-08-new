@@ -15,9 +15,11 @@ checkDataForm();
 function onInputForm(event) {
     inputObj[event.target.name] = event.target.value;
     console.log(inputObj);
-    // const email = event.target.email.value; //
+    // const email = event.target.value; //
+    // const message = event.target.value;
+    // const email = event.currenttarget.elements.email.value,
     // console.log(event.target.value);
-    // const message = event.target.message.value;
+    
     // можно оптимизировать, чтобы 2 раза не писать одно и то же?
     // localStorage.setItem(STORAGE_KEY, JSON.stringify({ email, message }));
     localStorage.setItem(STORAGE_KEY, JSON.stringify(inputObj));
@@ -30,11 +32,11 @@ function onInputForm(event) {
 function onSubmitForm(event) {
     event.preventDefault();
     // console.log(event.target.value);// button,  event.currenttarget.elements.name.value почему underfine? а в функции Input работало?
-    const inputObj2 = {
+    const submitObj = {
         email: onForm.elements.email.value,
         message: onForm.elements.message.value
     };
-    console.log(inputObj2); //как можно было по-другому назвать? Разные объекты или один и тот же?
+    console.log(submitObj); //как можно было по-другому назвать? Разные объекты или один и тот же?
     // можно ли то же самое имя, как в функции Input? inputObj
     
     // console.log(JSON.parse(localStorage.getItem(STORAGE_KEY)));
