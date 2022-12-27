@@ -11,7 +11,7 @@ const player = new VimeoPlayer(iframe);
 const onPlay = function ({seconds}) {
     // data is an object containing properties specific to that event
     //ключ videoplayer-current-time, JSON формат
-const savedTime = localStorage.setItem('videoplayer-current-time', JSON.stringify(seconds))
+  localStorage.setItem('videoplayer-current-time', JSON.stringify(seconds))
 };
 
 player.on('timeupdate', throttle(onPlay, 1000));
